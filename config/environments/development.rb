@@ -34,32 +34,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
-  # production.rb, test.rb, development.rb or application.rb
-
-  YourApp::Application.configure do
-    config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
-      :enable_starttls_auto => true, # detects and uses STARTTLS
-      :user_name => ENV["app32246337@heroku.com"],
-      :password  => ENV["ItE-7EEshAEoZG0WODz7mw"], # SMTP password is any valid API key
-      :authentication => :plain, # Mandrill supports 'plain' or 'login'
-      :domain => 'heroku.com', # your domain to identify your server when connecting
-    }
-
-    # …
-  end
-
-  # app/mailers/your_mailer.rb
-
-  class YourMailer < ActionMailer::Base
-    def email_name
-      mail :subject => "Mandrill rides the Rails!",
-           :to      => "recipient@example.com",
-           :from    => "you@yourdomain.com"
-    end
-  end
-
-  # In a controller: YourMailer.email_name.deliver
 end
