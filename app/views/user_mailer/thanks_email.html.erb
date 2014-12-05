@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks, <%= @card.name %></h1>
+    <p>
+      You have successfully tracked a card,
+      your card is: <%= @card.serial %><br>
+      and location is: <%= @card.zip %><br>
+    </p>
+    <p>
+      To view the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for tracking and have a great day!</p>
+  </body>
+</html>
