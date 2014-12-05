@@ -28,8 +28,6 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        # Tell the UserMailer to send a welcome email after save
-        UserMailer.thanks_email(@card).deliver
         format.html { redirect_to @card, notice: 'Card was successfully created.' }
         format.json { render :show, status: :created, location: @card }
       else
