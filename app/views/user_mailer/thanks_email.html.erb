@@ -4,11 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thanks, <%= @card.name %></h1>
+    <h1>Thanks,</h1>
     <p>
-      You have successfully tracked a card,
-      your card is: <%= @card.serial %><br>
-      and location is: <%= @card.zip %><br>
+      You have successfully registered <%= @user.name %><br>
+      and your password is: <%= @user.login %><br>
     </p>
     <p>
       To view the site, just follow this link: <%= @url %>.
