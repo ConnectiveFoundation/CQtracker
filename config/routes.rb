@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cards
+
   get 'pages/landing_page'
 
   get 'pages/contact'
