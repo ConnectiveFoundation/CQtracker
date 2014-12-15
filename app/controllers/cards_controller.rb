@@ -3,8 +3,14 @@ class CardsController < ApplicationController
 
   # GET /cards
   # GET /cards.json
+
   def index
     @cards = Card.all
+    @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
+      marker.lat card.zip
+      marker.lng card.zip
+      marker.title card.serial
+    end
   end
 
   # GET /cards/1
