@@ -1,0 +1,30 @@
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form role="form">
+    <div class="form-group field">
+      <label><%= f.label :address %><br>
+      <%= f.text_field :address, :class => "form-control" %></label>
+    </div>
+    <div id="hidden" class="form-group field">
+      <label><%= f.label :latitude %><br>
+      <%= f.text_field :latitude, :class => "hidden"  %></label>
+    </div>
+    <div id="hidden" class="form-group field">
+      <label><%= f.label :longitude %><br>
+      <%= f.text_field :longitude, :class => "hidden"  %></label>
+    </div>
+    <div class="actions">
+      <%= f.submit :class => "btn btn-default" %>
+    </div>
+  </form>
+<% end %>
