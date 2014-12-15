@@ -64,3 +64,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+Gmaps::Application.routes.draw do
+  resources :cards
+  root 'cards#index'
+end

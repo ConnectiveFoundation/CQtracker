@@ -5,9 +5,9 @@ class CardsController < ApplicationController
   # GET /cards.json
   def index
     @cards = Card.all
-    @hash = Gmaps4rails.build_markers(@users) do |zip, marker|
-      marker.lat card.latitude
-      marker.lng card.longitude
+    @hash = Gmaps4rails.build_markers(@cards) do |card, marker|
+      marker.lat card.zip
+      marker.lng card.zip
       marker.title card.serial
     end
   end
