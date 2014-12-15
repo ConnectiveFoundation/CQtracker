@@ -12,19 +12,19 @@
   <% end %>
   <form role="form">
     <div class="form-group field">
-      <label for"serialNumber"><%= f.label :serial %></label>
-      <input type="number" class="form-control" id="serialNumber"><%= f.number_field :serial %></input>
+      <label><%= f.label :serial %>
+      <%= f.number_field :serial, :class => "form-control"  %></label>
     </div>
     <div class="form-group field">
-      <label for="name"><%= f.label :name %></label>
-      <input type="name" class="form-control" id="name"><%= f.text_field :name %></input>
+      <label><%= f.label :name %>
+      <%= f.text_field :name, :class => "form-control"  %></label>
     </div>
     <div class="form-group field">
-      <label for="zipcode"><%= f.label :zip %></label>
-      <input type="zip" class="form-control" id="zipcode"><%= f.number_field :zip %></input>
+      <label><%= f.label :zip %>
+      <%= f.number_field :zip, :class => "form-control" %></label>
     </div>
     <div class="actions">
-      <button type="submit" class="btn btn-default"><%= f.submit %></button>
+     <%= f.submit :class => "btn btn-default" %>
     </div>
   </form>
 <% end %>
