@@ -4,4 +4,5 @@ class Card < ActiveRecord::Base
 	algoliasearch do
 		# associated index settings can be configured from here
 	end
+	Card.reindex!
 end
