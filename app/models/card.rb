@@ -5,4 +5,3 @@ class Card < ActiveRecord::Base
 		# associated index settings can be configured from here
 	end
 end
-Card.reindex!
