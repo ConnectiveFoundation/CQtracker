@@ -51,12 +51,24 @@
     // Replace the following values by your ApplicationID and ApiKey.
     var algolia = new AlgoliaSearch('IKMJ9EN278', 'ce7b1aaedfb0819964c1514d5b143faf');
     // replace YourIndexName by the name of the index you want to query.
-    var index = algolia.initIndex('YourIndexName');
+    var index = algolia.initIndex('Card');
+    function searchCallback(success, content) {
+      if (success) {
+        for (var i = 0; i < content.hits.length; ++i) {
+          console.log(content.hits[i]);
+        }
+      }
+    }
 
+  // perform query "jim"
+  index.search("jim", searchCallback);
+
+  // the last optional argument can be used
+  // to add search parameters
+  index.search("jim", searchCallback, { hitsPerPage: 5, facets: '*' });
     // typeahead.js initialization
     $('#card-search').typeahead({ hint: false }, {
       source: index.ttAdapter({ hitsPerPage: 5 }),
-      displayKey: 'email',
       templates: {
         suggestion: function(hit) {
           // render the hit
