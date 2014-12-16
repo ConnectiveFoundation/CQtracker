@@ -16,4 +16,5 @@
 //= require underscore
 //= require gmaps/google
 //= require algolia/algoliasearch.min
+//= require typeahead.js
 //= require_tree .
