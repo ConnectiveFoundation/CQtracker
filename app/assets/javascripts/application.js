@@ -15,6 +15,4 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
-//= require algolia/algoliasearch.min
-//= require algolia/typeahead.jquery
 //= require_tree .
