@@ -8,6 +8,7 @@ class Location < ActiveRecord::Base
 	# It returns the locations whose serial numbers match the query
 	def self.search(query)
 	# where(:serial_number, query) -> This would return an exact match of the query
-	where("serial_number like ?", "%#{query}%") 
+	where("cast(serial_number as text) LIKE ?", "%#{query}%")
+	#where("serial_number like ?", "%#{query}%") 
 	end
 end
