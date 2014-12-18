@@ -3,6 +3,7 @@
 <head>
   <title>CQ Card Tracker App</title>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -11,7 +12,54 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+ <div class="row">
+    <div class="pull-right" style="padding-top: 15px;">
+      <span data-toggle="tooltip" data-placement="left" title="Click 'Help' for a quick guide to using the CQ tracker app!"><i class="fa fa-question-circle fa-lg"></i></span>&nbsp;&nbsp;
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Help</button>
+    </div>
+  </div>
 <%= yield %>
-
+<!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Quick Start Guide</h4>
+        </div>
+        <div class="modal-body">
+          <h3>Tracking a card is easy:</h3>
+          <br />
+          <ul class="list-unstyled">
+            <li><i class="fa fa-search fa-fw"></i>&nbsp;&nbsp;Search for your card's Serial Number</li>
+            <br />
+            <li><i class="fa fa-pencil fa-fw"></i>&nbsp;&nbsp;Click on 'Edit' to input your location.</li>
+            <br />
+            <li>
+              <i class="fa fa-font fa-fw"></i>&nbsp;&nbsp;Type in your address and name.
+              <ul class="list-unstyled">
+                <li class="small" style="margin-left:25px"><em>Share as much or as little information as you'd like.</em></li>
+              </ul>
+            </li>
+            <br />
+            <li><i class="fa fa-send fa-fw"></i>&nbsp;&nbsp;Click 'Update Location' to submit your information.</li>
+          </ul>
+          <br />
+          <h3>That's it!</h3>
+          <p>For additional assistance, please contact us at <a href="mailto:support@connectivequotes.com">support@connectivequotes.com</a>.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
 </body>
 </html>
