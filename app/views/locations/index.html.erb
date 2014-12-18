@@ -6,7 +6,7 @@
   <form class="form-inline" role="form">
     <div class="form-group">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Locations", :class => "form-control" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Serial Number", :class => "form-control" %>
         <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
       <% end %>
     </div>
@@ -16,6 +16,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <th>Serial Number</th>
           <th>Address</th>
           <th>Latitude</th>
           <th>Longitude</th>
@@ -26,6 +27,7 @@
       <tbody>
         <% @locations.each do |location| %>
           <tr>
+            <td><%= location.serial_number %></td>
             <td><%= location.address %></td>
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>

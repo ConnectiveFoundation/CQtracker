@@ -12,6 +12,10 @@
   <% end %>
   <form role="form">
     <div class="form-group field">
+      <label><%= f.label :serial_number %><br>
+      <%= f.text_field :serial_number, :class => "form-control" %></label>
+    </div>
+    <div class="form-group field">
       <label><%= f.label :address %><br>
       <%= f.text_field :address, :class => "form-control" %></label>
     </div>

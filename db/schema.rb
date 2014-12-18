@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217180256) do
+ActiveRecord::Schema.define(version: 20141218162341) do
 
   create_table "cards", force: true do |t|
     t.integer  "serial"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141217180256) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "serial_number"
   end
 
   create_table "pg_search_documents", force: true do |t|
