@@ -36,6 +36,7 @@ gem 'spring',        group: :development
 gem 'gmaps4rails'
 gem 'geocoder'
 gem 'algoliasearch-rails'
+gem 'pg_search'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

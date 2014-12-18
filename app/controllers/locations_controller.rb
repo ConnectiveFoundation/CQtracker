@@ -10,6 +10,11 @@ class LocationsController < ApplicationController
       marker.lng location.longitude
       marker.infowindow location.address
     end
+    if params[:search]
+      @locations = Location.search(params[:search]).order("created_at DESC")
+    else
+      @locations = Location.all.order('created_at DESC')
+    end
   end
 
   # GET /locations/1
