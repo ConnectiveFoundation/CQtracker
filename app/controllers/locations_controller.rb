@@ -15,7 +15,6 @@ class LocationsController < ApplicationController
     else
       @locations = Location.all.order("created_at DESC")
     end
-    @locations = Location.order(params[:sort] + " " params[:direction] )
   end
 
   # GET /locations/1
