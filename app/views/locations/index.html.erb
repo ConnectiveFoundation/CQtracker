@@ -14,7 +14,8 @@
   <br />
   <div class="row">
     <div class="col-xs-12 col-md-8-offset2">
-      <div id="map" style="width: auto; height: 400px; border-radius: 10px; border: #cccccc solid 1px;"></div>
+      <div id="map" style="width: auto; height: 400px; border-radius: 10px; border: #cccccc solid 1px;">
+      </div>
     </div>
   </div>
   <br />
@@ -45,3 +46,12 @@
       </tbody>
     </table>
   </div>
+<!-- Google Map -->
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
