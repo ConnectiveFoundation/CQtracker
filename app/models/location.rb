@@ -3,7 +3,7 @@ class Location < ActiveRecord::Base
 	geocoded_by :address
 	after_validation :geocode, :if => :address_changed?
 
-	validates :address, presence: true
+	Locations.order(:serial_number)
 
 	# It returns the locations whose serial numbers match the query
 	def self.search(query)

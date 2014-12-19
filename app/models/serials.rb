@@ -1,5 +1,5 @@
 class Serials < ActiveRecord::Base
 	has_many :locations, dependent: :destroy
 	validates :serial_number, presence: true, uniqueness: true
-	Serials.order(:serial_number)
+	default_scope order("#{self.locations}.serial_number ASC")
 end
