@@ -8,7 +8,7 @@
         <%= text_field_tag :search, params[:search], placeholder: "Enter Serial Number", :class => "form-control" %>
         <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
       <% end %>
-      <button type="button" class="btn btn-default"><i class="fa fa-cog fa-fw"></i><%= link_to 'New Location', new_location_path %></button>
+      <button type="button" class="btn btn-default"><i class="fa fa-plus-circle fa-fw"></i>&nbsp;<%= link_to 'New Location', new_location_path %></button>
     </div>
   </form>
     <br />
@@ -41,10 +41,9 @@
             <td><%= location.name %></td>
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>
-            <td>&nbsp;</td>
             <td><i class="fa fa-eye fa-fw"></i>&nbsp;<%= link_to 'Show', location %></td>
             <td><i class="fa fa-pencil fa-fw"></i>&nbsp;<%= link_to 'Edit', edit_location_path(location) %></td>
-            <td>&nbsp;<!-- <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %> --></td>
+           <!-- <td>&nbsp; <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %> </td> -->
           </tr>
         <% end %>
       </tbody>
