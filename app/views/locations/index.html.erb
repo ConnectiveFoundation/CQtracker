@@ -8,11 +8,7 @@
         <%= text_field_tag :search, params[:search], placeholder: "Enter Serial Number", :class => "form-control" %>
         <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
       <% end %>
-      <%= link_to locations_path(@new) do %>
-        <button type="button" class="btn btn-default">
-          New Location&nbsp;<i class="fa fa-plus-circle fa-fw"></i>
-        </button>
-      <% end %>
+      <%= link_to 'New Location', new_location_path, :class => "btn btn-default" %>
     </div>
   </form> 
   <br />
@@ -51,7 +47,7 @@
     </tbody>
   </table>
 </div>
-<br />
+<br
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
