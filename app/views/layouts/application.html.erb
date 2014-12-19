@@ -16,7 +16,7 @@
  <div class="row">
     <div class="pull-right" style="padding-top: 15px;">
       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#newLocation">Help</button>
-      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-sign fa-fw"></i>Add Location</button>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-sign fa-fw"></i><%= link_to 'Add Location', location %></button>
     </div>
   </div>
 <%= yield %>
@@ -48,29 +48,6 @@
           <br />
           <h3>That's it!</h3>
           <p>For additional assistance, please contact us at <a href="mailto:support@connectivequotes.com">support@connectivequotes.com</a>.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Location Modal -->
-  <div class="modal fade" id="newLocation" tabindex="-1" role="dialog" aria-labelledby="newLocationLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h2 class="modal-title" id="newLocationLabel">New location</h2>  
-        </div>
-        <div class="modal-body">
-          <br />
-          <div class="row">
-            <%= render 'form' %>
-          </div>
-          <div class="row">
-            <%= link_to 'Back', locations_path %>
-          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
