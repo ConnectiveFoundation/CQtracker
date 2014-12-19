@@ -6,7 +6,7 @@
     <div class="form-group">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Enter Serial Number", :class => "form-control" %>
-        <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>&nbsp;&nbsp;<span data-toggle="tooltip" data-placement="right" title="1. Search for your Serial Number"><i class="fa fa-question-circle fa-lg"></i></span>
+        <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>&nbsp;&nbsp;<span data-toggle="tooltip" data-placement="right" title="Search for your Serial Number to see where it's been."><i class="fa fa-question-circle fa-lg"></i></span>
       <% end %>
     </div>
   </form>
