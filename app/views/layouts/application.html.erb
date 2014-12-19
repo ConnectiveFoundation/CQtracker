@@ -15,9 +15,11 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 <!-- Container -->
 <div class="container">
+
 <!-- Help Modal Button -->
  <div class="row">
     <div class="pull-right" style="padding-top: 15px;">
@@ -28,7 +30,9 @@
     </div>
   </div>
 <!-- Help Modal Button -->
+
 <%= yield %>
+
 <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -67,5 +71,15 @@
 <!-- Modal -->
 </div>
 <!-- Container -->
+
+<!-- Google Map -->
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
 </body>
 </html>
