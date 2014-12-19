@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
 
   # GET /locations
   # GET /locations.json
+  helper method :sort_column, :sort_direction
   def index
     @locations = Location.all
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
@@ -15,6 +16,7 @@ class LocationsController < ApplicationController
     else
       @locations = Location.all.order("created_at DESC")
     end
+    @locations = Location.order(sort_column + " " sort_direction )
   end
 
   # GET /locations/1
@@ -81,4 +83,14 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:serial_number, :address, :latitude, :longitude, :name)
     end
+end
+
+private
+
+def sort_column
+  Location.column_serial_number.include?(params[:sort]) ? params[:sort] : "serial_number"
+end
+
+def sort_direction
+  %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 end
