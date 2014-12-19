@@ -34,7 +34,7 @@
       </thead>
 
       <tbody>
-        <% @locations.each do |location| %>
+        <% @locations.each.order("serial_number") do |location| %>
           <tr>
             <td><%= location.serial_number %></td>
             <td><%= location.address %></td>
