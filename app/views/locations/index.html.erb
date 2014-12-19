@@ -28,7 +28,8 @@
           <th>Name</th>
           <th>Latitude</th>
           <th>Longitude</th>
-          <th colspan="4"></th>
+          <th>Date</th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -40,6 +41,7 @@
             <td><%= location.name %></td>
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>
+            <td><%= location.created_at %></td>
             <td><i class="fa fa-eye fa-fw"></i>&nbsp;<%= link_to 'Show', location %></td>
           </tr>
         <% end %>
