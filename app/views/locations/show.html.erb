@@ -12,7 +12,7 @@
 			  <%= @location.serial_number %>
 			</p>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<p>
 			  <strong>Address:</strong>
 			  <%= @location.address %>
@@ -36,13 +36,14 @@
 			  <%= @location.longitude %>
 			</p>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-1">
 			<p>
 			  <strong>Date:</strong>
 			  <%= @location.created_at %>
 			</p>
 		</div>
 	</div>
+	<br />
 	<div class="row">
 		<div class="pull-right">
 			<i class="fa fa-pencil fa-fw"></i>&nbsp;<%= link_to 'Edit', edit_location_path(@location) %> |
