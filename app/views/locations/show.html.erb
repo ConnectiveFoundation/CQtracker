@@ -6,13 +6,13 @@
 	</div>
 	<br />
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<p>
 			  <strong>Serial Number:</strong>
 			  <%= @location.serial_number %>
 			</p>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<p>
 			  <strong>Address:</strong>
 			  <%= @location.address %>
@@ -34,6 +34,12 @@
 			<p>
 			  <strong>Longitude:</strong>
 			  <%= @location.longitude %>
+			</p>
+		</div>
+		<div class="col-md-2">
+			<p>
+			  <strong>Date:</strong>
+			  <%= @location.created_at %>
 			</p>
 		</div>
 	</div>
