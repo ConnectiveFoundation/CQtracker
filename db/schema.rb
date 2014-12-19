@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141218211835) do
 
-  create_table "cards", force: true do |t|
-    t.integer  "serial"
-    t.string   "name"
-    t.integer  "zip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "locations", force: true do |t|
     t.string   "address"
     t.float    "latitude"
@@ -29,22 +21,6 @@ ActiveRecord::Schema.define(version: 20141218211835) do
     t.datetime "updated_at"
     t.integer  "serial_number"
     t.string   "name"
-  end
-
-  create_table "pg_search_documents", force: true do |t|
-    t.text     "content"
-    t.integer  "searchable_id"
-    t.string   "searchable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "login"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
