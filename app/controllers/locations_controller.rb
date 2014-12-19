@@ -83,14 +83,14 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:serial_number, :address, :latitude, :longitude, :name)
     end
-end
 
-private
+  private
 
-def sort_column
-  Location.column_serial_number.include?(params[:sort]) ? params[:sort] : "serial_number"
-end
+  def sort_column
+    Location.column_serial_number.include?(params[:sort]) ? params[:sort] : "serial_number"
+  end
 
-def sort_direction
-  %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
