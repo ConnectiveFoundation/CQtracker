@@ -6,9 +6,9 @@
     <div class="form-group">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Enter Serial Number", :class => "form-control" %>
-        <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
+        <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
       <% end %>
-      <button type="button" class="btn btn-default"><i class="fa fa-plus-circle fa-fw"></i>&nbsp;<%= link_to 'New Location', new_location_path %></button>
+      <button type="button" class="btn btn-default"><%= link_to 'New Location', new_location_path %>&nbsp;<i class="fa fa-plus-circle fa-fw"></i></button>
     </div>
   </form>
     <br />
@@ -29,7 +29,7 @@
           <th>Name</th>
           <th>Latitude</th>
           <th>Longitude</th>
-          <th colspan="3"></th>
+          <th colspan="4"></th>
         </tr>
       </thead>
 
