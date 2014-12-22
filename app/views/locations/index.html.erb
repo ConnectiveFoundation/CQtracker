@@ -42,18 +42,17 @@
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>
             <td><%= location.created_at %></td>
-            <td>&nbsp;</td>
-            <td><%= link_to 'Show', location, :class => "btn btn-default"%></td>
+            <td><%= link_to 'Show', location, :class => "btn btn-default" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-<!-- Google Map -->
+<br />
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });

@@ -1,7 +1,9 @@
 class Location < ActiveRecord::Base
 	belongs_to :serial
 	geocoded_by :address
-	#after_validation :geocode, :if => :address_changed?
+	after_validation :geocode, :if => :address_changed?
+
+	#default_scope  { order(:serial_number => :asc) }
 
 	# It returns the locations whose serial numbers match the query
 	def self.search(query)
