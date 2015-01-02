@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
+    @locations = Location.all
     @locations = Location.paginate(:page => params[:page], :per_page => 10)
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
@@ -38,7 +39,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, :class => "alert alert-success alert-dismissible", notice: 'Well done! You successfully tracked a location.' }
+        format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
@@ -52,7 +53,7 @@ class LocationsController < ApplicationController
   def update
     respond_to do |format|
       if @location.update(location_params)
-        format.html { redirect_to @location, :class => "alert alert-info alert-dismissible", notice: 'Heads up! You have edited an existing location.' }
+        format.html { redirect_to @location, notice: 'Location was successfully updated.' }
         format.json { render :show, status: :ok, location: @location }
       else
         format.html { render :edit }
@@ -66,7 +67,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     respond_to do |format|
-      format.html { redirect_to locations_url, :class => "alert alert-danger alert-dismissible", notice: 'Oh snap! You just deleted a location.' }
+      format.html { redirect_to locations_url, notice: 'Location was successfully deleted.' }
       format.json { head :no_content }
     end
   end
