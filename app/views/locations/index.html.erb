@@ -1,3 +1,10 @@
+<!-- BREADCRUMB NAV -->
+  <div class="row">
+    <ol class="breadcrumb">
+      <li class="active"><a href="#">CQ Tracker Home</a></li>
+    </ol>
+  </div>
+  <br />
   <div class="row">
     <h1>All locations</h1>
   </div>
@@ -49,6 +56,10 @@
     </table>
   </div>
 <br />
+# Display Each result from @locations - Paginated Result
+ 
+# Then add in the pagination links like this
+<% will_paginate @locations %>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){

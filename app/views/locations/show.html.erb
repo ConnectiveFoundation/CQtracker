@@ -1,3 +1,12 @@
+<!-- BREADCRUMB NAV -->
+	<div class="row">
+		<ol class="breadcrumb">
+			<%= link_to locations_path(@location) do %>
+				<li>CQ Tracker Home</li>
+			<% end %>
+			<li class="active"><a href="#">Show Location</a></li>
+		</ol>
+	</div>
 	<div class="row">
 		<p id="notice"><%= notice %></p>
 	</div>
