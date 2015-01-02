@@ -66,7 +66,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Oh snap! You deleted a location.' }
+      format.html { redirect_to locations_url }
       format.json { head :no_content }
     end
   end
