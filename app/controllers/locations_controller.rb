@@ -5,7 +5,6 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
-    #@locations = Location.paginate(:page => params[:page], :per_page => 10)
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
       marker.lng location.longitude
@@ -67,7 +66,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Location was successfully deleted.' }
+      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
