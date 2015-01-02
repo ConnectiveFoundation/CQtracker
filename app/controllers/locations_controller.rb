@@ -38,7 +38,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to @location, alert: 'High Five! Thanks for tracking your card location.' :class => "alert alert-success alert-dismissable" }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
