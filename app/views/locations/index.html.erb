@@ -37,7 +37,6 @@
         </tr>
       </thead>
       <tbody>
-        <% @locations.each(:page => params[:page], :per_page => 10) do |location| %>
           <tr>
             <td><%= location.serial_number %></td>
             <td><%= location.address %></td>
