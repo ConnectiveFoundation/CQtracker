@@ -38,7 +38,7 @@
       </thead>
 
       <tbody>
-        <% @locations.each do |location| %>
+       <%= will_paginate @locations do |location| %>
           <tr>
             <td><%= location.serial_number %></td>
             <td><%= location.address %></td>
