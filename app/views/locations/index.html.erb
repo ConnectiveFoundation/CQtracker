@@ -37,6 +37,7 @@
         </tr>
       </thead>
       <tbody>
+        <% @locations.each do |location| %>
           <tr>
             <td><%= location.serial_number %></td>
             <td><%= location.address %></td>
@@ -49,7 +50,6 @@
         <% end %>
       </tbody>
     </table>
-    <%= will_paginate @locations %>
   </div>
 <br />
 <script type="text/javascript">
