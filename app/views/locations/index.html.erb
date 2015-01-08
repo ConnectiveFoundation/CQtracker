@@ -51,11 +51,10 @@
       </tbody>
     </table>
   </div>
-  <div class="flickr_pagination">
-    <div class="page_info">
-      <%= page_entries_info @locations %>
+  <div class="row">
+    <div class="apple_pagination">
+      <%= will_paginate @locations, :container => false %>
     </div>
-    <%= will_paginate @locations, :container => false %>
   </div>
   <script type="text/javascript">
     handler = Gmaps.build('Google');
