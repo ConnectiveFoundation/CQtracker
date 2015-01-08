@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
     if params[:search]
       @locations = Location.search(params[:search]).order("created_at DESC")
     else
-      @locations = Location.all.order("serial_number ASC")
+      @locations = Location.all.order("serial_number ASC").paginate(:page => params[:page], :per_page => 10)
     end
   end
 
