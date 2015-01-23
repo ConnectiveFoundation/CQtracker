@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all.order("serial_number ASC").paginate(page: params[:page],:per_page => 10).search(params[:search])
+    @locations = Location.all
     #@locations = Location.order("serial_number ASC").paginate(page: params[:page],:per_page => 10).search(params[:search])
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
