@@ -1,12 +1,19 @@
 <br />
 <!-- BREADCRUMB NAV -->
 	<div class="row">
-		<ol class="breadcrumb">
-			<li><%= link_to locations_path(@location) do %>
-				CQ Tracker Home
-			<% end %></li>
-			<li class="active"><a href="#">Show Location</a></li>
-		</ol>
+		<div class="col-md-6">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<%= link_to root_path, :class => "btn btn-primary" do %>
+						<i class="fa fa-lg fa-home"></i>
+					<% end %>
+					<%= link_to new_location_path, :class => "btn btn-primary" do %>
+						<i class="fa fa-lg fa-plus"></i>
+					<% end %>
+					<a class="btn btn-primary active" href="#"><i class="fa fa-lg fa-eye"></i></a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="row">
 		<p id="notice"><%= notice %></p>
@@ -16,47 +23,77 @@
 	</div>
 	<br />
 	<div class="row">
-		<div class="col-md-2">
-			<p>
-			  <strong>Serial Number:</strong>
-			  <%= @location.serial_number %>
-			</p>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Serial Number:</h3>
+			  </div>
+			  <div class="panel-body">
+					<%= @location.serial_number %>
+			  </div>
+			</div>
 		</div>
-		<div class="col-md-3">
-			<p>
-			  <strong>Address:</strong>
-			  <%= @location.address %>
-			</p>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Name:</h3>
+			  </div>
+			  <div class="panel-body">
+					<%= @location.name %>
+			  </div>
+			</div>
 		</div>
-		<div class="col-md-2">
-			<p>
-			  <strong>Name:</strong>
-			  <%= @location.name %>
-			</p>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Date:</h3>
+			  </div>
+			  <div class="panel-body">
+					<% if @location.created_at != nil %>
+						<%= @location.created_at.strftime("%b %d, %Y") %>
+					<% else %>
+						<%= @location.created_at %>
+					<% end %>
+			  </div>
+			</div>
 		</div>
-		<div class="col-md-2">
-			<p>
-			  <strong>Latitude:</strong>
-			  <%= @location.latitude %>
-			</p>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Address:</h3>
+			  </div>
+			  <div class="panel-body">
+					<%= @location.address %>
+			  </div>
+			</div>
 		</div>
-		<div class="col-md-2">
-			<p>
-			  <strong>Longitude:</strong>
-			  <%= @location.longitude %>
-			</p>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Latitude:</h3>
+			  </div>
+			  <div class="panel-body">
+					<%= @location.latitude %>
+			  </div>
+			</div>
 		</div>
-		<div class="col-md-1">
-			<p>
-			  <strong>Date:</strong>
-			  <%= @location.created_at %>
-			</p>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Longitude:</h3>
+			  </div>
+			  <div class="panel-body">
+					<%= @location.longitude %>
+			  </div>
+			</div>
 		</div>
 	</div>
 	<br />
 	<div class="row">
 		<div class="pull-right">
-			<%= link_to 'Edit', edit_location_path(@location), :class => "btn btn-default" %>
+			<%= link_to 'Edit', edit_location_path(@location), :class => "btn btn-embossed btn-primary" %>
 		</div>
 	</div>
 	<br />

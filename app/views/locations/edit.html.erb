@@ -1,15 +1,19 @@
 <br />
 <!-- BREADCRUMB NAV -->
 	<div class="row">
-		<ol class="breadcrumb">
-			<li><%= link_to locations_path(@location) do %>
-				CQ Tracker Home
-			<% end %></li>
-			<li><%= link_to locations_path(@show) do %>
-				Show Location
-			<% end %></li>
-			<li class="active"><a href="#">Edit Location</a></li>
-		</ol>
+		<div class="col-md-6">
+			<div class="btn-toolbar">
+				<div class="btn-group">
+					<%= link_to root_path, :class => "btn btn-primary" do %>
+						<i class="fa fa-lg fa-home"></i>
+					<% end %>
+					<%= link_to new_location_path, :class => "btn btn-primary" do %>
+						<i class="fa fa-lg fa-plus"></i>
+					<% end %>
+					<a class="btn btn-primary active" href="#"><i class="fa fa-lg fa-pencil"></i></a>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="row">
 		<h1>Edit location</h1>

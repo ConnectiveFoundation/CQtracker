@@ -1,5 +1,4 @@
 <br />
-<br />
   <div class="row">
     <h1>CQ Card Tracker</h1>
     <h4>See where your card has been and add your location to the list!</h4>
@@ -10,11 +9,11 @@
     <div class="form-group">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Enter Serial Number", :class => "form-control" %>
-        <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
+        <%= submit_tag "Search", :name => nil, :class => "btn btn-embossed btn-primary" %>
       <% end %>
-      <%= link_to 'New Location', new_location_path, :class => "btn btn-default" %>
+      <%= link_to 'New Location', new_location_path, :class => "btn btn-embossed btn-inverse" %>
     </div>
-  </form> 
+  </form>
   <br />
   <div class="row">
     <div class="col-xs-12 col-md-8-offset2">
@@ -44,15 +43,52 @@
             <td><%= location.name %></td>
             <td><%= location.latitude %></td>
             <td><%= location.longitude %></td>
-            <td><%= location.created_at %></td>
-            <td><%= link_to 'Show', location, :class => "btn btn-default" %></td>
+            <td>
+              <% if location.created_at != nil %>
+                  <%="#{time_ago_in_words(location.created_at)} ago"%>
+              <% else %>
+                  <%= location.created_at %>
+              <% end %>
+            </td>
+
+            <td><%= link_to 'Show', location, :class => "btn btn-xs btn-embossed btn-default" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
+  <div class="overlay"></div>
+  <div data-onboarded-token="XS-pJH6VymF4Ka4Drg-Dgw" style="display: none;" class="project">
+      <div data-onboarded-flow="My Awesome New Flow" class="flow">
+          <div data-step="1. Welcome" class="step">
+              <h3>Welcome to the CQ tracker app!</h3>
+              <p>This short tutorial will walk you through the steps of using the app.</p>
+              <button data-name="Go To Second Step" data-action-next="2. Second Step">Next <i class="fa fa-fw fa-chevron-right"></i></button>
+          </div>
+          <div data-step="2. Second Step" class="step">
+              <h3>Add your location</h3>
+              <p>Click the 'New Location' button to add your card to the database.</p>
+              <button data-name="Go To Third Step" data-action-next="3. Third Step">Next <i class="fa fa-fw fa-chevron-right"></i></button>
+          </div>
+          <div data-step="3. Third Step" class="step">
+              <h3>Search for a card</h3>
+              <p>If you want to see where your card has been, search for its serial number.</p>
+              <button data-name="Go To Fourth Step" data-action-next="4. Fourth Step">Next <i class="fa fa-fw fa-chevron-right"></i></button>
+          </div>
+          <div data-step="4. Fourth Step" class="step">
+              <h3>See all the cards</h3>
+              <p>Click 'Card list' to list all cards and view them on the global map.</p>
+              <button data-name="Go To Last Step" data-action-next="Last Step">Next <i class="fa fa-fw fa-chevron-right"></i></button>
+          </div>
+          <div data-step="Last Step" class="step">
+              <h3>That's about it.</h3>
+              <p>Use the <i class="fa fa-lg fa-home"></i> button to exit the app and return to connectivequotes.com</p>
+              <button data-name="End Flow" data-action-complete>Finish</button>
+          </div>
+      </div>
+  </div>
   <div class="row">
-    <div class="apple_pagination">
+    <div class="pagination">
       <%= will_paginate @locations %>
     </div>
   </div>

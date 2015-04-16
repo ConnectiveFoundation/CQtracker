@@ -3,10 +3,23 @@ class Location < ActiveRecord::Base
 	geocoded_by :address
 	after_validation :geocode, :if => :address_changed?
 
-	# It returns the locations whose serial numbers match the query
-	def self.search(query)
-	# where(:serial_number, query) -> This would return an exact match of the query
-	where("cast(serial_number as text) LIKE ?", "%#{query}%")
-	#where("serial_number like ?", "%#{query}%") 
-	end
+	# search query
+  def self.search(query)
+      return where('') if query.blank?
+
+      conditions = []
+      search_columns = [ :serial_number, :address, :name ]
+
+			query.downcase
+			
+      query.split(' ').each do |word|
+          search_columns.each do |column|
+              conditions << " cast(#{column} as text) LIKE #{sanitize("%#{word}%")} "
+          end
+      end
+
+      conditions = conditions.join('OR')
+      self.where(conditions)
+			#where("cast(serial_number as text) LIKE ?", "%#{query}%")
+  end
 end
