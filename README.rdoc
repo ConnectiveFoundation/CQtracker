@@ -14,4 +14,5 @@ About this app:
 
 
 If you would like to make enhancements or to streamline the code, please fork this project.
-<tt>rake doc:app</tt>.
+
+*The Connective Foundation is a non-profit 501c3 organization and all our projects are completely free and open source.*
