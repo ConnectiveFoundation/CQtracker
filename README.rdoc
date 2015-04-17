@@ -1,5 +1,7 @@
 == README
 
+{<img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/meghart/CQtracker">}[https://gitter.im/meghart/CQtracker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]
+
 This web app is meant to track the movement of Connective Quotes cards by placing markers on a map in connection with each card's serial number.
 
 
